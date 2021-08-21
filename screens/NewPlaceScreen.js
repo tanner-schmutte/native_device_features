@@ -10,19 +10,20 @@ import {
 import { useDispatch } from 'react-redux';
 
 import Colors from '../constants/Colors';
-import * as placesActions from '../store/actions/places'
+import ImageSelector from '../components/ImageSelector';
+import * as placesActions from '../store/actions/places';
 
 const NewPlaceScreen = (props) => {
     const [titleValue, setTitleValue] = useState('');
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const titleChangeHandler = (text) => {
         setTitleValue(text);
     };
 
     const savePlaceHandler = () => {
-        dispatch(placesActions.addPlace(titleValue))
+        dispatch(placesActions.addPlace(titleValue));
         props.navigation.goBack();
     };
 
@@ -35,6 +36,7 @@ const NewPlaceScreen = (props) => {
                     onChangeText={titleChangeHandler}
                     value={titleValue}
                 />
+                <ImageSelector />
                 <Button
                     title="Save Place"
                     color={Colors.primary}
