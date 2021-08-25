@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import HeaderButton from '../components/HeaderButton';
 import PlaceItem from '../components/PlaceItem';
-import * as placesactions from '../store/actions/places';
+import * as placesActions from '../store/actions/places';
 
 const PlacesListScreen = (props) => {
     const places = useSelector((state) => state.places.places);
